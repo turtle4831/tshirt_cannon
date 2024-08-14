@@ -11,6 +11,15 @@ class ShooterPivot(Wrappers.TurtleSubsystem.TurtleSubsystem):
     def joystickControl(self, power):
         self.motor.set(config.pivot_pid.calculate(self.motor_enc.getPosition(), power * config.shooter_pivot_joystick_gain))
         
+    
+    def setPower(self,power):
+        if self.motor_enc.getPosition() == config.shooter_pivot_min_pos or config.shooter_pivot_max_pos:
+            power = 0
+        
+        self.motor.set(power)
+    def getAtLimit(self):
+        return self.motor_enc.getPosition() == config.shooter_pivot_min_pos or config.shooter_pivot_max_pos
+        
     def init(self):
         super().init()
         

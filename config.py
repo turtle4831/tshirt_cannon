@@ -13,6 +13,12 @@ testicular_torsion_can = 8
 load_solenoid_port = 1
 fire_solenoid_port = 2
 
+turret_max_pos = 1000
+turret_min_pos = -1000
+
+shooter_pivot_max_pos = 1000
+shooter_pivot_min_pos = -1000
+
 
 turret_pid = wpimath.controller.PIDController(0.00001,0,0)
 pivot_pid = wpimath.controller.PIDController(0.00001,0,0)

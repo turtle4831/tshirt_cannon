@@ -19,3 +19,6 @@ class Robot(wpilib.TimedRobot):
     
     def teleopPeriodic(self):
         pass
+    
+    def disabledInit(self):
+        self.robot_container.scaryShutdown()

@@ -56,6 +56,13 @@ class RobotContainer:
                 self.shooter.scaryShutdown(),self.shooter
             )
         )
+    def scaryShutdown(self):
+        """
+        used at the start of disabled init to make sure that none of the pneumatics accidentally fires
+        :return:
+        """
+        self.shooter.scaryShutdown()
+        
     
         
        
